@@ -16,9 +16,9 @@ doctrine:
         auto_mapping: true
         mappings:
             App:
-                type: attribute
+                type: php
                 is_bundle: false
-                dir: '%kernel.project_dir%/src/Entity'
+                dir: '%kernel.project_dir%/src/Persistence/Mapping'
                 prefix: 'App\Entity'
                 alias: App
 
