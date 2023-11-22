@@ -23,8 +23,8 @@ services:
     arguments:
       - '@mailer'
     calls:
-      - setAdminEmail: [ 'admin@example.com' ]
+      - setAdminEmail: [ '%env(ADMIN_EMAIL)%' ]
     properties:
-        emailFrom: 'no-reply@example.com'
+        emailFrom: '%env(FROM_EMAIL)%'
 
 
