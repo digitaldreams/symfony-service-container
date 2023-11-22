@@ -23,6 +23,9 @@ class InMemoryProductRepository implements ProductRepository
 
     private function setIdIfNull(&$product)
     {
-        // implement the logic using ReflectionClass
+        $reflectionProperty = new \ReflectionProperty($product, 'id');
+        $reflectionProperty->setValue($product, count($this->products) + 1);
+
+        return $product;
     }
 }
