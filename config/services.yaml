@@ -23,8 +23,8 @@ services:
     arguments:
       - '@mailer'
     calls:
-      - setAdminEmail: [ '%env(ADMIN_EMAIL)%' ]
+      - setAdminEmail: [ "@=env('ADMIN_EMAIL')" ]
     properties:
-        emailFrom: '%env(FROM_EMAIL)%'
+        emailFrom: "@=env('FROM_EMAIL')"
 
 
