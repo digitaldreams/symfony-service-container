@@ -23,6 +23,9 @@ class DoctrineProductRepository extends ServiceEntityRepository implements Produ
 
     public function save(Product $product): Product
     {
+        if (empty($product->getVendor())) {
+            $product->setVendor('database');
+        }
         $this->_em->persist($product);
         $this->_em->flush();
 

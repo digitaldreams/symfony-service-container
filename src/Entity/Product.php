@@ -6,8 +6,10 @@ class Product
 {
     public function __construct(
         private ?int $id = null,
+        private ?string $uid = null,
         private ?string $name = null,
         private ?string $description = null,
+        private ?string $vendor = null,
         private ?float $price = null,
         private ?string $status = null,
         private ?\DateTimeImmutable $createdAt = null
@@ -20,6 +22,11 @@ class Product
     public function getId(): ?int
     {
         return $this->id;
+    }
+
+    public function getUid()
+    {
+        return $this->uid;
     }
 
     public function getName(): ?string
@@ -71,6 +78,18 @@ class Product
     public function setStatus(string $status): static
     {
         $this->status = $status;
+
+        return $this;
+    }
+
+    public function getVendor()
+    {
+        return $this->vendor;
+    }
+
+    public function setVendor(string $vendor)
+    {
+        $this->vendor = $vendor;
 
         return $this;
     }

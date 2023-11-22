@@ -3,10 +3,27 @@
 namespace App\Persistence\Repository;
 
 use App\Entity\Product;
+use Symfony\Component\Uid\Uuid;
 
 class InMemoryProductRepository implements ProductRepository
 {
-    protected array $products = [];
+    protected array $products = [
+    ];
+
+    public function __construct()
+    {
+        $this->products = [
+            new Product(
+                id: 1,
+                uid: Uuid::v7()->toRfc4122(),
+                name: 'Xtreme Boy',
+                description: 'Traveler Durable backpack',
+                vendor: 'inMemory',
+                price: 1520,
+                status: 'active'
+            )
+        ];
+    }
 
     public function save(Product $product): Product
     {

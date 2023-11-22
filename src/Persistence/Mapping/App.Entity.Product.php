@@ -20,6 +20,12 @@ $metadata->mapField([
 ]);
 
 $metadata->mapField([
+    'fieldName' => 'uid',
+    'type' => 'string',
+    'columnName' => 'uid',
+]);
+
+$metadata->mapField([
     'fieldName' => 'name',
     'type' => 'string',
     'length' => 150,
@@ -41,6 +47,12 @@ $metadata->mapField([
     'columnName' => 'status',
 ]);
 
+$metadata->mapField([
+    'fieldName' => 'vendor',
+    'type' => 'string',
+    'nullable' => false,
+    'columnName' => 'vendor',
+]);
 $metadata->mapField([
     'fieldName' => 'description',
     'type' => 'text',
