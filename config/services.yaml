@@ -28,4 +28,6 @@ services:
     properties:
       emailFrom: "@=parameter('app.from_email')"
 
+  App\Persistence\Repository\ProductRepository: '@App\Persistence\Repository\DoctrineProductRepository'
+
 
