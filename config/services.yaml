@@ -32,4 +32,16 @@ services:
 
   App\Persistence\Repository\ProductRepository: '@App\Persistence\Repository\DoctrineProductRepository'
 
+  App\Service\Vendors\VendorsHandler:
+    arguments:
+      - !tagged_iterator vendor
+
+  App\Service\Vendors\Amazon:
+    tags: ['vendor']
+  App\Service\Vendors\Ebay:
+    tags: [ 'vendor' ]
+  App\Service\Vendors\InMemoryProduct:
+    tags: [ 'vendor' ]
+  App\Service\Vendors\DoctrineProduct:
+    tags: [ 'vendor' ]
 

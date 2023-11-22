@@ -10,4 +10,6 @@ interface ProductRepository
 
     public function findById(int $id): ?Product;
 
+    public function getAll(int $perPage, $page);
+
 }

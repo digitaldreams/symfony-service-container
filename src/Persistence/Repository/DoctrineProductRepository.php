@@ -36,4 +36,9 @@ class DoctrineProductRepository extends ServiceEntityRepository implements Produ
     {
         return $this->find($id);
     }
+
+    public function getAll(int $perPage, $page)
+    {
+        return $this->findAll();
+    }
 }

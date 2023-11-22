@@ -38,6 +38,11 @@ class InMemoryProductRepository implements ProductRepository
         return $this->products[$id] ?? null;
     }
 
+    public function getAll(int $perPage, $page)
+    {
+        return $this->products;
+    }
+
     private function setIdIfNull(&$product)
     {
         $reflectionProperty = new \ReflectionProperty($product, 'id');
