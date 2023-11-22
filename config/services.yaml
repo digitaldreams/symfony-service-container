@@ -18,3 +18,13 @@ services:
     resource: '../src/Controller'
     tags: [ 'controller.service_arguments' ]
 
+  App\Service\NewProductCreatedNotification:
+    autowire: false
+    arguments:
+      - '@mailer'
+    calls:
+      - setAdminEmail: [ 'admin@example.com' ]
+    properties:
+        emailFrom: 'no-reply@example.com'
+
+
