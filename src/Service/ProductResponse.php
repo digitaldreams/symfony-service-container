@@ -3,10 +3,12 @@
 namespace App\Service;
 
 use App\Entity\Product;
+use App\Service\Offers\OfferResponse;
 
 class ProductResponse
 {
-    public $offer;
+    public ?OfferResponse $offer = null;
+
     public function __construct(
         public readonly int $vendorId,
         public readonly string $uid,
@@ -27,5 +29,17 @@ class ProductResponse
             price: $product->getPrice(),
             vendor: $product->getVendor()
         );
+    }
+
+    public function hasOffer(): bool
+    {
+        return !is_null($this->offer);
+    }
+
+    public function setOffer(OfferResponse $offer)
+    {
+        $this->offer = $offer;
+
+        return $this;
     }
 }

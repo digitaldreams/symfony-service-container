@@ -17,7 +17,7 @@ class Ebay implements VendorInterface
                 name: 'Dell Latitude Laptop Battery',
                 description: '6 Cell 600w, 22 hours power backup',
                 vendor: 'ebay',
-                price: 900
+                price: 250
             )
         ];
     }

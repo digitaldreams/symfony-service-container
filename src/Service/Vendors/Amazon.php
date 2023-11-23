@@ -17,7 +17,7 @@ class Amazon implements VendorInterface
                 name: 'MacBook Pro M3',
                 description: '14 inch Macbook pro 256 GB SSD, 16 GB RAM',
                 vendor: 'amazon',
-                price: 3900
+                price: 1999
             )
         ];
     }

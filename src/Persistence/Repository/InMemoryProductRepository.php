@@ -19,7 +19,7 @@ class InMemoryProductRepository implements ProductRepository
                 name: 'Xtreme Boy',
                 description: 'Traveler Durable backpack',
                 vendor: 'inMemory',
-                price: 1520,
+                price: 299,
                 status: 'active'
             )
         ];
