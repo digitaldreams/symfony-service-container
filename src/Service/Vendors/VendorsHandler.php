@@ -3,6 +3,7 @@
 namespace App\Service\Vendors;
 
 use App\Entity\Product;
+use App\Service\ProductResponse;
 
 class VendorsHandler
 {
@@ -21,18 +22,9 @@ class VendorsHandler
         $products = [];
         foreach ($this->vendors as $vendor) {
             $vendorProducts = $vendor->getAll($limit, $page);
-            foreach ($vendorProducts as $vendorProduct) {
-                $products[] = [
-                    'id' => $vendorProduct->getUid(),
-                    'vendorId' => $vendorProduct->getId(),
-                    'vendor' => $vendor->getName(),
-                    'name' => $vendorProduct->getName(),
-                    'description' => $vendorProduct->getDescription(),
-                    'price' => $vendorProduct->getPrice()
-                ];
-            }
+            $products[]=array_map(fn($vendorProduct) => ProductResponse::create($vendorProduct), $vendorProducts) ;
         }
 
-        return $products;
+        return array_merge(...$products);
     }
 }

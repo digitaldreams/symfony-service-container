@@ -39,4 +39,13 @@ services:
   App\Service\Vendors\VendorsHandler:
     arguments:
       - !tagged_iterator vendor
+  App\Service\Offers\OfferHandler:
+    decorates: 'App\Service\Vendors\VendorsHandler'
+    arguments:
+      - '@.inner'
+      - !tagged_iterator offers
 
+  App\Controller\ProductIndexController:
+    arguments:
+      - '@App\Service\Vendors\VendorsHandler'
+    tags: ['controller.service_arguments']
